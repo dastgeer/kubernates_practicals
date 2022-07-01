@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod # pod is an object type which is smallest deployeable unit and that can conatine one or more conatiner in it and those are rlevent and tight couple with each other
+metadata: 
+  name: client-pod
+  labels:
+    component: web
+spec:
+  containers:   #this Pod can have list of container to be runnign and main work of pod only
+    - name: client
+      image: stephengrider/multi-client
+      ports:
+        - containerPort: 3000  #3000 i sthe exteranl port mapping here and conatinerPort is what ever that conatiner port is present.

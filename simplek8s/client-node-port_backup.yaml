@@ -1,0 +1,12 @@
+apiVersion: v1 # there can be various api versiona nd each version have set of specific object type.
+kind: Service  # kind specify the type of object which we have to use by this config file.    
+metadata: 
+  name: client-node-port
+spec:
+  type: NodePort
+  ports: 
+    - port: 3050
+      targetPort: 3000
+      nodePort: 31515
+  selector:
+    component: web
